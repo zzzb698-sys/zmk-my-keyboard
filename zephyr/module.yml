@@ -1,5 +1,5 @@
 # zephyr/module.yml
-name: zmk-keyboard-my_custom_board  # 把 my_custom_board 改成你的键盘名(小写+下划线)
+name: zmk-keyboard-my_zmk_board  # 把 my_custom_board 改成你的键盘名(小写+下划线)
 build:
   cmake: .
   kconfig: Kconfig
