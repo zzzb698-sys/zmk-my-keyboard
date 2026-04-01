@@ -1,10 +1,26 @@
-/*
- * Copyright (c) 2026 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+// 这才是你该写的 shield .dtsi
+// 只包含按键矩阵，不包含任何主控配置
 
-/dts-v1/;
+/ {
+    kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
 
-#include <../boards/nicekeyboards/nice_nano/nice_nano.dts>
-#include <common/nordic/nrf52840_uf2_boot_mode.dtsi>
+        // 行引脚（你自己改）
+        row-gpios = <&gpio0  2 GPIO_ACTIVE_LOW>,
+                    <&gpio0  8 GPIO_ACTIVE_LOW>,
+                    <&gpio0 24 GPIO_ACTIVE_LOW>;
+
+        // 列引脚（你自己改）
+        col-gpios = <&gpio0  6 GPIO_ACTIVE_LOW>,
+                    <&gpio0 17 GPIO_ACTIVE_LOW>,
+                    <&gpio0 20 GPIO_ACTIVE_LOW>,
+                    <&gpio0 22 GPIO_ACTIVE_LOW>;
+    };
+
+    matrix_transform: matrix_transform {
+        compatible = "zmk,matrix-transform-custom";
+        row-count = <3>;  // 行数
+        col-count = <4>;  // 列数
+    };
+};
