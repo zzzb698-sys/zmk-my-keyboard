@@ -1,3 +1,4 @@
+#include <zephyr/kernel.h>       // 1. 先引入Zephyr/SDK相关头文件（可选，但避免依赖问题）
 #include <zmk/keymap.h>          // 必须引入ZMK核心行为头文件（关键！）
 #include "zb60.dtsi"             // 你的键盘硬件定义
 #include <dt-bindings/zmk/keys.h> // 键位码定义
