@@ -1,5 +1,5 @@
 // my_shield.keymap
-#include "my_shield.dtsi"
+#include "zb60.dtsi"
 #include <dt-bindings/zmk/keys.h>
 
 / {
