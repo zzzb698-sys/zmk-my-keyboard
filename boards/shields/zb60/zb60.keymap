@@ -1,1 +1,18 @@
+// my_shield.keymap
+#include "my_shield.dtsi"
+#include <dt-bindings/zmk/keys.h>
 
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+    // 3行 × 4列 键盘布局
+    KC_Q   KC_W   KC_E   KC_R
+    KC_A   KC_S   KC_D   KC_F
+    KC_Z   KC_X   KC_C   KC_V
+            >;
+        };
+    };
+};
