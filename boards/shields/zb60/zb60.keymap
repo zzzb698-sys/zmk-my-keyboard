@@ -1,12 +1,13 @@
-#include "zb60.dtsi"
-#include <dt-bindings/zmk/keys.h>
+#include <zmk/keymap.h>          // 必须引入ZMK核心行为头文件（关键！）
+#include "zb60.dtsi"             // 你的键盘硬件定义
+#include <dt-bindings/zmk/keys.h> // 键位码定义
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // 3行 × 4列 键盘布局（注释移到bindings外部）
+            // 3行×4列布局，&kp 必须和键名空格分隔，且无KC_前缀
             bindings = <
                 &kp Q   &kp W   &kp E   &kp R
                 &kp A   &kp S   &kp D   &kp F
